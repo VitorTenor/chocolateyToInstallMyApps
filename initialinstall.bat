@@ -9,7 +9,7 @@ IF NOT EXIST "%ProgramData%\chocolatey" (
     powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
 )
 
-set "programs=jetbrainstoolbox vscode dbeaver github-desktop notion git nvm docker-desktop bitwarden authy googlechrome brave postman insomnia-rest-api-client"
+set "programs=jetbrainstoolbox vscode dbeaver github-desktop notion git nvm docker-desktop bitwarden authy googlechrome brave postman insomnia-rest-api-client office365business"
 
 for %%p in (%programs%) do (
     echo "Instalando %%p..."
