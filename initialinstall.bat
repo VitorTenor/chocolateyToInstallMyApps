@@ -16,6 +16,14 @@ for %%p in (%programs%) do (
     choco install %%p -y || goto error
 )
 
+echo "Montando o ambinete docker"
+echo "Postgres"
+docker run --restart always --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+
+echo "MariaDB"
+docker run --restart always -d --name mariadb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mariadb mariadb
+
+
 echo "Todas as ferramentas foram instaladas com sucesso!"
 goto end
 
